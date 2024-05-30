@@ -1,0 +1,17 @@
+{% extends 'ToDo/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592;Вернуться</a>
+</div>
+
+<div class="card-body">
+    <form method="post">
+        {% csrf_token %}
+        <p>Вы действительно хотите удалить задачу? {{task}}</p>
+        <input class="button" type="submit" value="Удалить">
+    </form>
+</div>
+
+
+{% endblock content %}
